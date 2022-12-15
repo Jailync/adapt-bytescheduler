@@ -109,8 +109,8 @@ class BayesianSearch(Search):
         # exploration (e.g., 10.0). For EI or PI acquisition function, smaller xi prefers exploitation (e.g., 0.0),
         # larger xi prefers exploration (e.g., 0.1).
         # Check https://github.com/fmfn/BayesianOptimization/blob/master/examples/exploitation_vs_exploration.ipynb.
-        # self._utility = UtilityFunction(kind='ucb', kappa=2.5, xi=0.0)
-        self._utility = UtilityFunction(kind='ei', kappa=0.0, xi=0.1)
+        self._utility = UtilityFunction(kind='ucb', kappa=2.5, xi=0.0)
+        # self._utility = UtilityFunction(kind='ei', kappa=0.0, xi=0.1)
         self._opt = BayesianOptimization(
             f=None,
             pbounds=self._space,
